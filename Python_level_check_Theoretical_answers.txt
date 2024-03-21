@@ -35,7 +35,24 @@ What are Decorators?
 - Decorators add functionality to an existing function. 
 
 When a parameter is passed to a function, is it by value (copy)or reference (pointer) ?
-- AFAIK it's by value, i.e. copy.
+- AFAIK it's by value, i.e. copy. `Notes`: Only simple types like int, str, float are passed by value. Collections (list, dict, tuple etc.) are passed by reference. You can check it with the below code:
+
+```
+# Python function argument pass
+x = 5
+y = [1,2,3,4,5]
+
+def test_argument_change(num:int, l:list):
+    num += 1
+    l.append(6)
+
+test_argument_change(x,y)
+
+print(x)
+print(y)
+```
+
+The original list gets changed without a return statement.
 
 Does Python support multiple Inheritance (OOP)?
 - Sure. :-)
