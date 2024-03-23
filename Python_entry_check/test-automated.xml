@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-suite name="CalculatorTests">
+    <test-case name="test_addition">
+        <description>Tests basic addition functionality</description>
+        <subclass>Integration</subclass>
+        <input>
+            <operand1>5</operand1>
+            <operand2>3</operand2>
+        </input>
+        <expected-result>8</expected-result>
+    </test-case>
+
+    <test-case name="test_subtraction">
+        <description>(Automated) Tests basic subtraction functionality</description>
+        <subclass>Recovery</subclass>
+        <input>
+            <operand1>10</operand1>
+            <operand2>7</operand2>
+        </input>
+        <expected-result>3</expected-result>
+    </test-case>
+
+    <test-case name="test_multiplication">
+        <description>(Automated) Tests basic multiplication functionality</description>
+        <subclass>Recovery</subclass>
+        <input>
+            <operand1>10</operand1>
+            <operand2>7</operand2>
+        </input>
+        <expected-result>70</expected-result>
+    </test-case>
+
+    </test-suite>
