@@ -14,26 +14,32 @@ class StudentManagement(Student):
             print(f'Student with ID {student.student_id} already exists')
         else:
             self.students.append(student)
+            '''The following command is added to bring more clarity of what's going on behind the scenes'''
+            print(f'Student {student.first_name} {student.last_name} with ID {student.student_id} is added.')
             return
 
     def display(self, st_id):
-        st = self.search(st_id)
-        if st:
+        if self.search(st_id):
+            st = self.search(st_id)
             print(f'{st.first_name} {st.last_name} is {st.age}-years old and has an ID of {st.student_id}.')
-        return
+            return
+        else:
+            print(f'Student with ID {st_id} does not exist.')
+            return
 
     def search(self, id):
         for st in self.students:
             if st.student_id == id:
-                 return st
-            else:
-                 print(f'Student with ID {id} does not exist.')
-                 return
+                return st
+        return False
 
     def delete(self, id):
-        st = self.search(id)
-        if st:
-            self.students.remove(st)
+        if self.search(id):
+            self.students.remove(self.search(id))
+            print(f'Student with ID {id} is removed.')
+            return
+        else:
+            print(f'Student with ID {id} does not exist.')
             return
 
 if __name__ == "__main__":
